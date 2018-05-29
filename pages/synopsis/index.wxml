@@ -1,0 +1,11 @@
+<import src="/wxParse/wxParse.wxml" />
+<import src="/pages/components/base/base.wxml" />
+<template is="loading" data="{{data:loadData}}"></template>
+<view class="container">
+  <view class='content'>
+    <template is="wxParse" data="{{wxParseData:goods_detail.nodes}}"></template>
+  </view>
+  <block wx:if="{{info.ad_img!=''}}">
+    <image class='fun-banner' mode="aspectFill" src="{{info.ad_img}}"></image>
+  </block>
+</view>

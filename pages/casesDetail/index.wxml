@@ -1,0 +1,8 @@
+<import src="/wxParse/wxParse.wxml" />
+<import src="/pages/components/base/base.wxml" />
+<template is="loading" data="{{data:loadData}}"></template>
+<view class="container">
+  <view class='content'>
+    <template is="wxParse" data="{{wxParseData:goods_detail.nodes}}"></template>
+  </view>
+</view>

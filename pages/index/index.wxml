@@ -1,0 +1,89 @@
+<import src="/pages/components/base/base.wxml" />
+<template is="loading" data="{{data:loadData}}"></template>
+<view class="container zuanla-container">
+  <!-- 轮播 -->
+  <swiper hidden="{{banner.length==0}}" class='swiper' indicator-dots="true" autoplay="false" interval="5000" duration="500" circular="true" indicator-color="#D8D8D8" indicator-active-color="#FFA827">
+    <swiper-item class="swiper-item" wx:for="{{banner}}" wx:key="id">
+      <image class='slide-image' mode="aspectFill" data-id='{{item.id}}' src="{{item.img}}" />
+    </swiper-item>
+  </swiper>
+  <view class='fun-list'>
+    <view class='fun-item' data-code="{{baseInfo.by_phone}}" bindtap='makePhoneCall'>
+      <image src="/images/mobile_icon.png" class="fun-img"></image>
+      <view class='fun-info'>全国免费热线：{{baseInfo.by_phone}}</view>
+      <image src='/images/arrow_right.png' class='fun-arrow'></image>
+    </view>
+    <view class='fun-item b-none' data-code="{{baseInfo.by_mobile}}" bindtap='makePhoneCall'>
+      <image src="/images/mobile_icon.png" class="fun-img"></image>
+      <view class='fun-info'>全国售后：{{baseInfo.by_mobile}}</view>
+      <image src='/images/arrow_right.png' class='fun-arrow'></image>
+    </view>
+  </view>
+  <view class='line'></view>
+  <view class='fun1-list'>
+    <view class='fun1-item' wx:for="{{columnList}}" data-type="{{item.type}}" bindtap='goPage' wx:key="aaa">
+      <image src='{{item.img}}' class='fun1-img'></image>
+      <view class='fun1-des'>{{item.name}}</view>
+    </view>
+  </view>
+  <view class='fun2-list'>
+    <view class='fun-title'>装修案例</view>
+    <view class='fun2-item' wx:for="{{cinfo.cases_list}}" wx:key="bbb" bindtap='goCasesDetail' data-id="{{item.id}}">
+      <image src='{{item.img}}' mode="aspectFill" class='fun2-img'></image>
+      <view class='fun2-des'>{{item.title}}</view>
+    </view>
+  </view>
+  <block wx:if="{{cinfo.ad_img!=''}}">
+    <image class='fun-banner' mode="aspectFill" src="{{cinfo.ad_img}}"></image>
+  </block>
+  <view class='fun3-warp'>
+    <view class='line'></view>
+    <view class='fun3-list'>
+      <view class='fun-title'>服务项目</view>
+      <view class='fun3-item' wx:for="{{sinfo.service_list}}" wx:key="ccc">
+        <view class='fun3-left'>
+          <image class='fun3-img' mode="aspectFill" src='{{item.img}}'></image>
+          {{item.title}}
+        </view>
+        <text decode='true' class='fun3-des fsr20'>{{item.description}}</text>
+      </view>
+    </view>
+  </view>
+  <block wx:if="{{sinfo.ad_img!=''}}">
+    <image class='fun-banner' mode="aspectFill" src="{{sinfo.ad_img}}"></image>
+  </block>
+  <view class='fun4-warp'>
+    <view class='line'></view>
+    <view class='fun4-box'>
+      <image src='/images/jieshao_bg.png' class='fun4-bg'></image>
+      <view class='fun4-con'>
+        <view class='fun-title'>公司简介</view>
+        <view class='fun4-des'>{{cpinfo.description_short}}</view>
+        <view class='fun4-more' bindtap='goSynopsis'>
+          <view class='fun4-btn'>查看更多</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='fun5-warp'>
+    <view class='fun-title'>联系我们</view>
+    <view class='fun5-list'>
+      <view class='fun5-item' data-code="{{baseInfo.by_phone}}" bindtap='makePhoneCall'>
+        <view class='fun5-info'>全国免费热线：{{baseInfo.by_phone}}</view>
+        <image src='/images/arrow_right.png' class='fun5-arrow'></image>
+      </view>
+      <view class='fun5-item' data-code="{{baseInfo.by_mobile}}" bindtap='makePhoneCall'>
+        <view class='fun5-info'>全国售后：{{baseInfo.by_mobile}}</view>
+        <image src='/images/arrow_right.png' class='fun5-arrow'></image>
+      </view>
+      <view class='fun5-item b-none'>
+        <view class='fun5-info'>公司邮箱：{{baseInfo.by_email}}</view>
+        <image src='/images/arrow_right.png' class='fun5-arrow'></image>
+      </view>
+    </view>
+    <block wx:if="{{ctinfo.ad_img!=''}}">
+      <image class='fun-banner' mode="aspectFill" src="{{ctinfo.ad_img}}"></image>
+    </block>
+  </view>
+</view>
+<template is="zuanla"></template>

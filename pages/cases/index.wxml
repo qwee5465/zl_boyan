@@ -1,0 +1,33 @@
+<import src="/pages/components/base/base.wxml" />
+<template is="loading" data="{{data:loadData}}"></template>
+<view class="container">
+  <!-- 轮播 -->
+  <swiper hidden="{{banner.length==0}}" class='swiper' indicator-dots="true" autoplay="false" interval="5000" duration="500" circular="true" indicator-color="#D8D8D8" indicator-active-color="#FFA827">
+    <swiper-item class="swiper-item" wx:for="{{banner}}" wx:key="id">
+      <image class='slide-image' mode="aspectFill" data-id='{{item.id}}' src="{{item.img}}" />
+    </swiper-item>
+  </swiper>
+  <view class='fun-list'>
+    <view class='fun-item' data-code="{{baseInfo.by_phone}}" bindtap='makePhoneCall'>
+      <image src="/images/mobile_icon.png" class="fun-img"></image>
+      <view class='fun-info'>全国免费热线：{{baseInfo.by_phone}}</view>
+      <image src='/images/arrow_right.png' class='fun-arrow'></image>
+    </view>
+    <view class='fun-item b-none' data-code="{{baseInfo.by_mobile}}" bindtap='makePhoneCall'>
+      <image src="/images/mobile_icon.png" class="fun-img"></image>
+      <view class='fun-info'>全国售后：{{baseInfo.by_mobile}}</view>
+      <image src='/images/arrow_right.png' class='fun-arrow'></image>
+    </view>
+  </view>
+  <view class='fun2-list'>
+    <view class='fun-title'>装修案例</view>
+    <view class='fun2-item' wx:for="{{cinfo.cases_list}}" wx:key="aaa" data-id="{{item.id}}" bindtap='goCaseDetail'>
+      <image src='{{item.img}}' mode="aspectFill" class='fun2-img'></image>
+      <view class='fun2-des'>{{item.title}}</view>
+    </view>
+  </view>
+  <block wx:if="{{cinfo.ad_img!=''}}">
+    <image class='fun-banner' mode="aspectFill" src="{{cinfo.ad_img}}"></image>
+  </block>
+</view>
+<template is="zuanla"></template>

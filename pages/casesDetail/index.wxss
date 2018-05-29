@@ -1,0 +1,16 @@
+page {
+  background-color: #fff;
+}
+
+.container {
+  min-height: 100%;
+  background-color: #fff;
+}
+
+.content {
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+  font-size: 24rpx;
+  color: #676767;
+  line-height: 40rpx;
+}

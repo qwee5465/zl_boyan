@@ -1,0 +1,94 @@
+@import "/pages/components/base/base.wxss";
+
+page {
+  background-color: #fff;
+}
+
+.container {
+  background-color: #fff;
+  min-height: 100%;
+}
+
+.form-group {
+  margin: 0 20rpx;
+  height: 94rpx;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  border-bottom: 1rpx solid #d9d9d9;
+}
+
+.form-label {
+  width: 160rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 30rpx;
+  color: #1e1e1e;
+  border-right: 2rpx solid #d9d9d9;
+}
+
+.form-input {
+  width: calc(100% - 162rpx);
+  height: 94rpx;
+  padding: 0 30rpx;
+  font-size: 30rpx;
+  color: #1e1e1e;
+  box-sizing: border-box;
+}
+
+.form-input-p {
+  color: #8d8d8d;
+}
+
+.form-label1 {
+  width: 294rpx;
+  font-size: 30rpx;
+  color: #1e1e1e;
+}
+
+.picker {
+  font-size: 24rpx;
+  color: #ffa827;
+}
+
+.form-label2 {
+  width: 100%;
+  font-size: 30rpx;
+  color: #1e1e1e;
+  padding: 26rpx 0;
+}
+
+.form-text {
+  width: 100%;
+  height: 300rpx;
+  font-size: 30rpx;
+  color: #1e1e1e;
+}
+
+.form-text-p {
+  font-size: 30rpx;
+  color: #8d8d8d;
+}
+
+.form-btn-warp {
+  position: relative;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+
+.form-submit {
+  background: #ffa827;
+  border-radius: 8rpx;
+  font-size: 30rpx;
+  color: #fff;
+  border:0;
+}
+.form-submit::after{
+  content: "";
+  border:0;
+  border-radius: 0;
+}
+
+.footer-zuanla {
+  background-color: #fff;
+}

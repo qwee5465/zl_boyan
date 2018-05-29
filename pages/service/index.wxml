@@ -1,0 +1,39 @@
+<import src="/pages/components/base/base.wxml" />
+<template is="loading" data="{{data:loadData}}"></template>
+<view class="container">
+  <!-- 轮播 -->
+  <swiper hidden="{{banner.length==0}}" class='swiper' indicator-dots="true" autoplay="false" interval="5000" duration="500" circular="true" indicator-color="#D8D8D8" indicator-active-color="#FFA827">
+    <swiper-item class="swiper-item" wx:for="{{banner}}" wx:key="id">
+      <image class='slide-image' mode="aspectFill" data-id='{{item.id}}' src="{{item.img}}" />
+    </swiper-item>
+  </swiper>
+  <view class='fun-list'>
+    <view class='fun-item' data-code="{{baseInfo.by_phone}}" bindtap='makePhoneCall'>
+      <image src="/images/mobile_icon.png" class="fun-img"></image>
+      <view class='fun-info'>全国免费热线：{{baseInfo.by_phone}}</view>
+      <image src='/images/arrow_right.png' class='fun-arrow'></image>
+    </view>
+    <view class='fun-item b-none' data-code="{{baseInfo.by_mobile}}" bindtap='makePhoneCall'>
+      <image src="/images/mobile_icon.png" class="fun-img"></image>
+      <view class='fun-info'>全国售后：{{baseInfo.by_mobile}}</view>
+      <image src='/images/arrow_right.png' class='fun-arrow'></image>
+    </view>
+  </view>
+  <view class='fun3-warp'>
+    <view class='line'></view>
+    <view class='fun3-list'>
+      <view class='fun-title'>服务项目</view>
+      <view class='fun3-item' wx:for="{{sinfo.service_list}}" wx:key="ccc">
+        <view class='fun3-left'>
+          <image class='fun3-img' mode="aspectFill" src='{{item.img}}'></image>
+          {{item.title}}
+        </view>
+        <text decode='true' class='fun3-des fsr20'>{{item.description}}</text>
+      </view>
+    </view>
+  </view>
+  <block wx:if="{{sinfo.ad_img!=''}}">
+    <image class='fun-banner' mode="aspectFill" src="{{sinfo.ad_img}}"></image>
+  </block>
+</view>
+<template is="zuanla"></template>

@@ -1,0 +1,56 @@
+<import src="/wxParse/wxParse.wxml" />
+<!--page数据异步未加载完显示的loading页面  -->
+<template name="loading">
+  <view wx:if="{{!data.hide}}" class='loading-warp {{data.animate?"loading-opacity0":""}}'></view>
+</template>
+
+<!--底部技术支持 -->
+<template name="zuanla">
+  <view class="footer-zuanla">
+    <view>钻啦网络 · 技术支持</view>
+    <view>www.zuanla.com.cn</view>
+  </view>
+</template>
+
+<!-- Toast -->
+<template name="toast">
+  <view class='toast-warp' wx:if="{{toastInfo.isShow}}">
+    <view class='toast-tip'>
+      <image wx:if="{{toastInfo.icon}}" src="{{toastInfo.icon==1?'/images/toast_dui.png':'/images/toast_cuo.png'}}" class='toast-icon'></image>
+      {{toastInfo.title}}
+    </view>
+  </view>
+</template>
+
+<!-- 底部tabBar -->
+<template name="tabBar">
+  <block wx:if="{{!tabBarHide}}">
+    <view class='bar-h100'></view>
+    <view class='bar-warp'>
+      <view wx:for="{{tabBarList}}" wx:key="key" class='bar-item {{index==tabBarIndex?"active":""}}' bindtap='goTabBarPage' data-index="{{index}}">
+        <image src='{{index==tabBarIndex?item.selectedIconPath:item.iconPath}}' class='bar-item-icon'></image>
+        <view class='bar-text'>{{item.text}}</view>
+        <!-- <view class='bar-reddot'>1</view> -->
+      </view>
+    </view>
+  </block>
+</template>
+
+<template name="notice">
+  <view class='notice-view' wx:if="{{data.isShowNotice}}">
+    <view class='notice'>
+      <text class='notice-title'>{{data.pop_window_info.title}}</text>
+      <scroll-view class='notice-content' scroll-y>
+        <text class='notice-content-text' space='true' decode='true'>{{data.pop_window_info.intro}}</text>
+      </scroll-view>
+    </view>
+    <view class='base-notice-line'></view>
+    <image class='notice-cancel' src='/images/notice_cancel.png' bindtap='cancelNotice'></image>
+  </view>
+</template>
+
+<template name="bloading">
+  <view class='b-loading-warp' wx:if="{{bloading.isShowBloading}}" style='margin-top:{{bloading.marginTop}}rpx;'>
+    <image src="/images/loading-icon.gif" class='b-loading-icon'></image>正在加载...
+  </view>
+</template>

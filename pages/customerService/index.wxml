@@ -1,0 +1,49 @@
+<import src="/pages/components/base/base.wxml" />
+<template is="loading" data="{{data:loadData}}"></template>
+<view class="container zuanla-container">
+  <button open-type='contact' class='cus-warp'>
+    <image src='/images/customer_service_icon.png' class='cus-icon'></image>
+  </button>
+  <view class='list'>
+    <view class='item'>
+      <view class='item-icon-warp'>
+        <image class='item-icon' src='/images/cus_icon1.png'></image>
+      </view>
+      <view class='item-info'>{{baseInfo.by_company_name}}</view>
+    </view>
+    <view class='item' bindtap='makePhoneCall' data-code="{{baseInfo.by_phone}}">
+      <view class='item-icon-warp'>
+        <image class='item-icon' src='/images/cus_icon2.png'></image>
+      </view>
+      <view class='item-info'>{{baseInfo.by_phone}}</view>
+      <view class='item-des'>【一键拨号】</view>
+    </view>
+    <view class='item' bindtap='makePhoneCall' data-code="{{baseInfo.by_mobile}}">
+      <view class='item-icon-warp'>
+        <image class='item-icon' src='/images/cus_icon3.png'></image>
+      </view>
+      <view class='item-info'>{{baseInfo.by_mobile}}</view>
+      <view class='item-des'>【一键拨号】</view>
+    </view>
+    <view class='item'>
+      <view class='item-icon-warp'>
+        <image class='item-icon' src='/images/cus_icon4.png'></image>
+      </view>
+      <view class='item-info'>{{baseInfo.by_email}}</view>
+    </view>
+    <view class='item' bindtap='openLocation'>
+      <view class='item-icon-warp'>
+        <image class='item-icon' src='/images/cus_icon5.png'></image>
+      </view>
+      <view class='item-info'>{{baseInfo.by_address}}</view>
+      <view class='item-des'>【一键导航】</view>
+    </view>
+    <view class='item' bindtap='goBespeak'>
+      <view class='item-icon-warp'>
+        <image class='item-icon' src='/images/cus_icon6.png'></image>
+      </view>
+      <view class='item-info'>留言</view>
+    </view>
+  </view>
+</view>
+<template is="zuanla"></template>
