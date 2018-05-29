@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/member/index",
+    "pages/customerService/index",
+    "pages/service/index",
+    "pages/cases/index",
+    "pages/casesDetail/index",
+    "pages/bespeak/index",
+    "pages/synopsis/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#FFF",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#F2F2F2",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#939393",
+    "selectedColor": "#FFA827",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/images/tabs/index.png",
+        "selectedIconPath": "/images/tabs/index_selected.png"
+      },
+      {
+        "pagePath": "pages/cases/index",
+        "text": "装修案例",
+        "iconPath": "/images/tabs/cases.png",
+        "selectedIconPath": "/images/tabs/cases_selected.png"
+      },
+      {
+        "pagePath": "pages/customerService/index",
+        "text": "客服",
+        "iconPath": "/images/tabs/customer_ervice.png",
+        "selectedIconPath": "/images/tabs/customer_ervice_selected.png"
+      },
+      {
+        "pagePath": "pages/member/index",
+        "text": "联系我们",
+        "iconPath": "/images/tabs/member.png",
+        "selectedIconPath": "/images/tabs/member_selected.png"
+      }
+    ]
+  }
+}
