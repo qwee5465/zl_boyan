@@ -20,7 +20,7 @@ Page({
   onLoad: function (options) {
     var that = this;
     var time1 = common.dateFormat(new Date(), "yyyy-MM-dd");
-    var time2 = common.dateFormat(new Date(), "HH-mm");
+    var time2 = common.dateFormat(new Date(), "HH:mm");
     that.setData({
       time1: time1,
       time2: time2
@@ -109,6 +109,7 @@ Page({
       })
       return;
     }
+    data.time = that.data.time1 + " " +that.data.time2 + ":00";
     if (that.data.isRequest) {
       that.data.isRequest = false;
       network.ajax({
